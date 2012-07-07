@@ -41,9 +41,9 @@ def test(ctx):
 def shutdown():
   import Options
   if not Options.commands['distclean'] and not Options.commands['clean']:
-    if os.path.exists('build/default/timesignature.node') and not os.path.exists('timesignature.node'):
+    if os.fs.exists('build/default/timesignature.node') and not os.fs.exists('timesignature.node'):
       os.symlink('build/default/timesignature.node', 'timesignature.node')
-    if os.path.exists('build/Release/timesignature.node') and not os.path.exists('timesignature.node'):
+    if os.fs.exists('build/Release/timesignature.node') and not os.fs.exists('timesignature.node'):
       os.symlink('build/Release/timesignature.node', 'timesignature.node')
   else:
     if os.path.lexists('timesignature.node'):
